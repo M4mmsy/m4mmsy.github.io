@@ -134,11 +134,12 @@
 }
 
 .painting-card h3 {
-  margin-top: 14px;
   font-size: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  max-width: 220px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 1.4;
 }
 
     .gallery-arrow {
@@ -387,34 +388,33 @@
           <button class="gallery-arrow left" onclick="scrollGallery('canvas-gallery', 'left')">‹</button>
 
           <div class="scroll-gallery" id="canvas-gallery">
+
+            <div class="painting-card">
+              <img src="pictures/canvas/IMG_3919.jpg" onclick="openLightbox(this.src)" alt="Canvas Work III">
+              <h3>"Pain and Pleasure"<br>100*80cm<br>Oil on Canvas<br>(Available)</h3>
+            </div>
             <div class="painting-card">
               <img src="pictures/canvas/IMG_3917.jpg" onclick="openLightbox(this.src)" alt="Canvas Work I">
-              <h3>Canvas Work I</h3>
+              <h3>"Visual Guidance"<br>80*60cm<br> Acrylic on Canvas<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/canvas/IMG_3918.jpg" onclick="openLightbox(this.src)" alt="Canvas Work II">
-              <h3>Canvas Work II</h3>
+              <h3>"Converting"<br>60*50cm<br>Acrylic on Canvas<br>(Available)</h3>
             </div>
-
-            <div class="painting-card">
-              <img src="pictures/canvas/IMG_3919.jpg" onclick="openLightbox(this.src)" alt="Canvas Work III">
-              <h3>Canvas Work III</h3>
-            </div>
-
             <div class="painting-card">
               <img src="pictures/canvas/IMG_3922.jpg" onclick="openLightbox(this.src)" alt="Canvas Work IV">
-              <h3>Canvas Work IV</h3>
+              <h3>"Traveling"<br>100*100cm<br>Acrylic on Canvas<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/canvas/IMG_3923.jpg" onclick="openLightbox(this.src)" alt="Canvas Work V">
-              <h3>Canvas Work V</h3>
+              <h3>"Japanese Stream"<br>50*60cm<br>Acrylic on Canvas<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/canvas/IMG_3924.jpg" onclick="openLightbox(this.src)" alt="Canvas Work VI">
-              <h3>Canvas Work VI</h3>
+              <h3>"Inside"<br>50*60cm<br>Acrylic on Canvas<br>(Available)</h3>
             </div>
           </div>
 
@@ -428,17 +428,20 @@
           <div class="scroll-gallery" id="mixed-media-gallery">
             <div class="painting-card">
               <img src="pictures/mixed_media/schleichend.jpg" onclick="openLightbox(this.src)" alt="schleichend">
-              <h3>Paper Work I</h3>
+              <h3>„Schleichend“ <br>Acrylic and oil on paper<br>26*38cm<br>(Available)
+              </h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/mixed_media/IMG_3925.jpg" onclick="openLightbox(this.src)" alt="Paper Work II">
-              <h3>Paper Work II</h3>
+              <h3>„Air”<br>Acrylic, Fineliner and Charcoal on Paper<br>25*38cm<br>(Available)
+
+              </h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/mixed_media/AE2BD89F-45FF-464B-8C82-340C31F361A3.jpg" onclick="openLightbox(this.src)" alt="Paper Work II">
-              <h3>Paper Work II</h3>
+              <h3>„Unfortunate Consequences”<br>, Acrylic and Oil on Paper<br>(sold)</h3>
             </div>
 
           </div>
@@ -451,96 +454,98 @@
           <button class="gallery-arrow left" onclick="scrollGallery('watercolor-gallery', 'left')">‹</button>
 
           <div class="scroll-gallery" id="watercolor-gallery">
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3932.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
+              <h3>"Space"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
+            </div>
+
+            
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3926.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
+              <h3>"Passing through"<br>Watercolor on Paper<br>32cm*24cm<br>(Available)</h3>
+            </div>
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3930.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
+              <h3>"Outside"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
+            </div>
+
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3927.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
+              <h3>"Levitating"<br>Watercolor on Paper<br>32*24cm<br>(Available)</h3>
+            </div>
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3929.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>"Distance"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
+            </div>
+
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3945.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work I">
-              <h3>Watercolor Work I</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3944.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>Watercolor Work II</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3943.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
-              <h3>Watercolor Work III</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3942.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
-              <h3>Watercolor Work IV</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3941.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
-              <h3>Watercolor Work V</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3940.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
-              <h3>Watercolor Work VI</h3>
-            </div>
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3939.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>Watercolor Work II</h3>
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3938.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
-              <h3>Watercolor Work III</h3>
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3937.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
-              <h3>Watercolor Work IV</h3>
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3936.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
-              <h3>Watercolor Work V</h3>
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3935.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
-              <h3>Watercolor Work VI</h3>
+              <h3>TBD</h3>
             </div>
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3934.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>Watercolor Work II</h3>
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3933.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
-              <h3>Watercolor Work III</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3932.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
-              <h3>Watercolor Work IV</h3>
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3931.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
-              <h3>Watercolor Work V</h3>
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3930.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
-              <h3>Watercolor Work VI</h3>
-            </div>
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3929.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>Watercolor Work II</h3>
+              <img src="pictures/watercolor/IMG_3944.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3927.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
-              <h3>Watercolor Work IV</h3>
+              <img src="pictures/watercolor/IMG_3943.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
+              <h3>TBD</h3>
             </div>
 
             <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3926.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
-              <h3>Watercolor Work V</h3>
+              <img src="pictures/watercolor/IMG_3942.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
+              <h3>TBD</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3941.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
+              <h3>TBD</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3940.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
+              <h3>TBD</h3>
+            </div>
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3939.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>TBD</h3>
             </div>
           </div>
 
@@ -565,11 +570,12 @@
               Alexander Mattingley-Scott is an artist working with painting,
               abstraction, color, and atmosphere.
             </p>
-
             <p>
-              Replace this text with your artist statement,
-              exhibitions, biography, or studio information.
+              My work explores the space between observation and imagination. Drawing inspiration from landscapes, memory, and the human figure, I create paintings that move between abstraction and representation. Through layered surfaces, shifting forms, and a restrained use of narrative, I aim to evoke a sense of depth, ambiguity, and quiet contemplation.
+
+Rather than depicting specific places or stories, my paintings invite viewers to project their own experiences and interpretations onto the work. I am interested in moments where the familiar becomes uncertain, and where atmosphere and emotion take precedence over description.
             </p>
+
           </div>
         </div>
 
