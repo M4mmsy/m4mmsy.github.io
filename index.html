@@ -3,11 +3,637 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Scott – Interactive Portfolio</title>
-  <link rel="stylesheet" href="css/main_page_style.css" />
+  <title>Alexander Mattingley-Scott</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      background: #fff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 56px;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(8px);
+      color: #111;
+    }
+
+    .logo {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 42px;
+      letter-spacing: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 0.95;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    .hero {
+      height: 100vh;
+      min-height: 650px;
+      position: relative;
+      background:
+        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.2)),
+        url("pictures/canvas/IMG_3919.jpg") center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 56px 64px;
+    }
+
+    section {
+      padding: 110px 56px;
+    }
+
+    .section-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 34px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-bottom: 45px;
+    }
+
+    .subcategory-title {
+      font-size: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 100px;
+      margin-bottom: 40px;
+    }
+
+    .subcategory-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .gallery-wrapper {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .scroll-gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  align-items: flex-start;
+}
+
+.painting-card {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.painting-card img {
+  width: auto;
+  height: 300px;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+}
+
+.painting-card h3 {
+  margin-top: 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  max-width: 220px;
+}
+
+    .gallery-arrow {
+      position: absolute;
+      top: 38%;
+      width: 48px;
+      height: 48px;
+      border: none;
+      background: black;
+      color: white;
+      font-size: 34px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .gallery-arrow.left {
+      left: -24px;
+    }
+
+    .gallery-arrow.right {
+      right: -24px;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about-photo {
+      width: 100%;
+      max-width: 320px;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+
+    .about-text {
+      max-width: 560px;
+      margin-top: 10px;
+    }
+
+    .about-text p,
+    .contact p,
+    .resume-section p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .resume-section {
+      margin-top: 70px;
+    }
+
+    .resume-title {
+      font-size: 22px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .contact a {
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1px solid #111;
+    }
+
+    footer {
+      padding: 40px 56px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-top: 1px solid #eee;
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 850px) {
+  header {
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 18px;
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: clamp(18px, 5vw, 26px);
+    letter-spacing: 4px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.05;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  nav a {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    height: 75vh;
+    min-height: 520px;
+    padding: 0 20px 40px;
+    background-position: center;
+  }
+
+  section {
+    padding: 80px 20px;
+  }
+
+  footer {
+    padding: 32px 20px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 26px;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
+  }
+
+  .subcategory-title {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 70px;
+    margin-bottom: 24px;
+  }
+
+  .scroll-gallery {
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  .painting-card {
+    min-width: 85%;
+    scroll-snap-align: start;
+  }
+
+  .painting-card h3 {
+    font-size: 12px;
+  }
+
+  .gallery-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 42%;
+  width: 38px;
+  height: 38px;
+  font-size: 28px;
+  opacity: 0.75;
+}
+
+.gallery-arrow.left {
+  left: 6px;
+}
+
+.gallery-arrow.right {
+  right: 6px;
+}
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-photo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 480px;
+  }
+
+  .painting-card {
+    min-width: 92%;
+  }
+}
+  </style>
 </head>
+
 <body>
-  <canvas id="game"></canvas>
-  <script src="js/main_page.js"></script>
+  <header>
+    <div class="logo">Alexander Mattingley-Scott</div>
+
+    <nav>
+      <a href="#paintings">Paintings</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://instagram.com/alex.ma.scott" target="_blank">Instagram</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home"></section>
+
+    <section id="paintings">
+      <div class="section-inner">
+        <h2>Paintings</h2>
+
+        <h3 class="subcategory-title">Mixed Media on Canvas</h3>
+        <div class="gallery-wrapper">
+          <button class="gallery-arrow left" onclick="scrollGallery('canvas-gallery', 'left')">‹</button>
+
+          <div class="scroll-gallery" id="canvas-gallery">
+            <div class="painting-card">
+              <img src="pictures/canvas/IMG_3917.jpg" onclick="openLightbox(this.src)" alt="Canvas Work I">
+              <h3>Canvas Work I</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/canvas/IMG_3918.jpg" onclick="openLightbox(this.src)" alt="Canvas Work II">
+              <h3>Canvas Work II</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/canvas/IMG_3919.jpg" onclick="openLightbox(this.src)" alt="Canvas Work III">
+              <h3>Canvas Work III</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/canvas/IMG_3922.jpg" onclick="openLightbox(this.src)" alt="Canvas Work IV">
+              <h3>Canvas Work IV</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/canvas/IMG_3923.jpg" onclick="openLightbox(this.src)" alt="Canvas Work V">
+              <h3>Canvas Work V</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/canvas/IMG_3924.jpg" onclick="openLightbox(this.src)" alt="Canvas Work VI">
+              <h3>Canvas Work VI</h3>
+            </div>
+          </div>
+
+          <button class="gallery-arrow right" onclick="scrollGallery('canvas-gallery', 'right')">›</button>
+        </div>
+
+        <h3 class="subcategory-title">Mixed Media on Paper</h3>
+        <div class="gallery-wrapper">
+          <button class="gallery-arrow left" onclick="scrollGallery('mixed-media-gallery', 'left')">‹</button>
+
+          <div class="scroll-gallery" id="mixed-media-gallery">
+            <div class="painting-card">
+              <img src="pictures/mixed_media/schleichend.jpg" onclick="openLightbox(this.src)" alt="schleichend">
+              <h3>Paper Work I</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/mixed_media/IMG_3925.jpg" onclick="openLightbox(this.src)" alt="Paper Work II">
+              <h3>Paper Work II</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/mixed_media/AE2BD89F-45FF-464B-8C82-340C31F361A3.jpg" onclick="openLightbox(this.src)" alt="Paper Work II">
+              <h3>Paper Work II</h3>
+            </div>
+
+          </div>
+
+          <button class="gallery-arrow right" onclick="scrollGallery('mixed-media-gallery', 'right')">›</button>
+        </div>
+
+        <h3 class="subcategory-title">Watercolor</h3>
+        <div class="gallery-wrapper">
+          <button class="gallery-arrow left" onclick="scrollGallery('watercolor-gallery', 'left')">‹</button>
+
+          <div class="scroll-gallery" id="watercolor-gallery">
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3945.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work I">
+              <h3>Watercolor Work I</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3944.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>Watercolor Work II</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3943.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
+              <h3>Watercolor Work III</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3942.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
+              <h3>Watercolor Work IV</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3941.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
+              <h3>Watercolor Work V</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3940.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
+              <h3>Watercolor Work VI</h3>
+            </div>
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3939.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>Watercolor Work II</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3938.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
+              <h3>Watercolor Work III</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3937.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
+              <h3>Watercolor Work IV</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3936.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
+              <h3>Watercolor Work V</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3935.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
+              <h3>Watercolor Work VI</h3>
+            </div>
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3934.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>Watercolor Work II</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3933.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
+              <h3>Watercolor Work III</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3932.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
+              <h3>Watercolor Work IV</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3931.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
+              <h3>Watercolor Work V</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3930.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
+              <h3>Watercolor Work VI</h3>
+            </div>
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3929.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>Watercolor Work II</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3927.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
+              <h3>Watercolor Work IV</h3>
+            </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3926.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
+              <h3>Watercolor Work V</h3>
+            </div>
+          </div>
+
+          <button class="gallery-arrow right" onclick="scrollGallery('watercolor-gallery', 'right')">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-inner">
+        <h2>About</h2>
+
+        <div class="about-layout">
+          <img
+            src="pictures/about/30A93820-96EF-4898-81C7-E3398326002F.jpg"
+            class="about-photo"
+            alt="Alexander Mattingley-Scott"
+          >
+
+          <div class="about-text">
+            <p>
+              Alexander Mattingley-Scott is an artist working with painting,
+              abstraction, color, and atmosphere.
+            </p>
+
+            <p>
+              Replace this text with your artist statement,
+              exhibitions, biography, or studio information.
+            </p>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3 class="resume-title">Resume</h3>
+          <p>2026 — Group Exhibition, Café Leitstelle Heidelberg</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-inner">
+        <h2>Contact</h2>
+        <p>Feel free to contact me for inquiries, commissions, exhibitions, or questions:</p>
+        <p><a href="mailto:alexander.mattingleyscott@gmail.com">alexander.mattingleyscott@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © Alexander Mattingley-Scott
+  </footer>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Large painting view">
+  </div>
+
+  <script>
+    function scrollGallery(id, direction) {
+      const gallery = document.getElementById(id);
+
+      if (!gallery) return;
+
+      const card = gallery.querySelector(".painting-card");
+      if (!card) return;
+
+      const gap = 26;
+      const scrollAmount = card.offsetWidth + gap;
+
+      if (direction === "right") {
+        if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 5) {
+          gallery.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }
+
+      if (direction === "left") {
+        if (gallery.scrollLeft <= 5) {
+          gallery.scrollTo({ left: gallery.scrollWidth, behavior: "smooth" });
+        } else {
+          gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        }
+      }
+    }
+
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
 </body>
 </html>
