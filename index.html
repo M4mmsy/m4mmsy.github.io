@@ -84,7 +84,7 @@
     }
 
     .section-inner {
-      max-width: 1050px;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
@@ -145,7 +145,7 @@
     .gallery-arrow {
       position: absolute;
       top: 28%;
-      width: 29px;
+      width: 10px;
       height: 48px;
       border: none;
       background: rgba(0, 0, 0, 0);
@@ -154,14 +154,21 @@
       cursor: pointer;
       opacity: 0.35;
       z-index: 2;
+      animation: arrowFade 2.5s ease-in-out infinite;
+
     }
+    @keyframes arrowFade {
+  0%   { opacity: 0.25; }
+  50%  { opacity: 0.8; }
+  100% { opacity: 0.25; }
+}
 
     .gallery-arrow.left {
-      left: -28px;
+      left: -32px;
     }
 
     .gallery-arrow.right {
-      right: -28px;
+      right: -15px;
     }
     .gallery-arrow:hover {
       opacity: 1;
@@ -267,6 +274,10 @@
     font-size: 12px;
     letter-spacing: 1px;
   }
+  .section-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
 
   .hero {
     height: 40vh;
@@ -324,14 +335,22 @@
   align-items: center;
   justify-content: center;
   top: 35%;
-  width: 24px;
+  width: 5px;
   height: 40px;
   border: none;
   background: transparent;
   color: black;
-  font-size: 56px;
+  font-size: 70px;
   opacity: 0.65;
   cursor: pointer;
+  animation: arrowFade 2.5s ease-in-out infinite;
+
+}
+
+@keyframes arrowFade {
+  0%   { opacity: 0.25; }
+  50%  { opacity: 0.8; }
+  100% { opacity: 0.25; }
 }
 
 .gallery-arrow.left {
