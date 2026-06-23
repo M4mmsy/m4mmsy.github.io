@@ -70,7 +70,7 @@
     .hero {
       height: 100vh;
       min-height: 650px;
-      position: relative;
+      position:relative;
       background:
         linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.2)),
         url("pictures/canvas/IMG_3919.jpg") center / cover no-repeat;
@@ -240,12 +240,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 18px 18px;
+    padding: 12px 12px;
     gap: 14px;
   }
 
   .logo {
-    font-size: clamp(18px, 5vw, 26px);
+    font-size: clamp(13px, 5vw, 12px);
     letter-spacing: 4px;
     text-align: center;
     white-space: normal;
@@ -265,8 +265,8 @@
   }
 
   .hero {
-    height: 75vh;
-    min-height: 520px;
+    height: 40vh;
+    min-height: 320px;
     padding: 0 20px 40px;
     background-position: center;
   }
@@ -299,14 +299,21 @@
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
   }
-
   .painting-card {
-    min-width: 85%;
-    scroll-snap-align: start;
-  }
+  flex: 0 0 auto;
+  width: auto;
+}
 
+.painting-card img {
+  display: block;
+  height: 200px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+  
   .painting-card h3 {
-    font-size: 12px;
+    font-size: 9px;
   }
 
   .gallery-arrow {
@@ -334,8 +341,11 @@
   }
 
   .about-photo {
-    max-width: 100%;
-    height: auto;
+    display: block;
+  height: 200px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
   }
 
   .about-text {
@@ -343,24 +353,6 @@
   }
 }
 
-@media (max-width: 480px) {
-  .logo {
-    font-size: 18px;
-    letter-spacing: 3px;
-  }
-
-  nav a {
-    font-size: 11px;
-  }
-
-  .hero {
-    min-height: 480px;
-  }
-
-  .painting-card {
-    min-width: 92%;
-  }
-}
   </style>
 </head>
 
@@ -465,87 +457,74 @@
               <img src="pictures/watercolor/IMG_3926.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
               <h3>"Passing through"<br>Watercolor on Paper<br>32cm*24cm<br>(Available)</h3>
             </div>
+
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3929.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
+              <h3>"Distance"<br>Watercolor and <br> Fineliner on Paper<br>24*32cm<br>(Available)</h3>
+            </div>
+            <div class="painting-card">
+              <img src="pictures/watercolor/IMG_3936.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
+              <h3>"Enlight"<br>Watercolor and <br> Fineliner on Paper<br>22,5*25cm<br>(Available)</h3>
+            </div>
+
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3930.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
-              <h3>"Outside"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
+              <h3>"Outside"<br>Watercolor and <br> Fineliner on Paper<br>24*32cm<br>(Available)</h3>
             </div>
 
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3927.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
-              <h3>"Levitating"<br>Watercolor on Paper<br>32*24cm<br>(Available)</h3>
-            </div>
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3929.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>"Distance"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
+              <h3>"Levitating"<br>Watercolor and <br> Fineliner on Paper<br>32*24cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3945.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work I">
-              <h3>TBD</h3>
+              <h3>"Erect Forest"<br>Watercolor and <br> Fineliner on Paper<br>24*32cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3938.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
-              <h3>TBD</h3>
+              <h3>"Fast Life"<br>Watercolor and <br>Fineliner on Paper<br>24*30cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3937.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
-              <h3>TBD</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3936.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
-              <h3>TBD</h3>
+              <h3>"Open Minded"<br>Watercolor and <br>Coffee on Paper<br>24*32cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3935.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
-              <h3>TBD</h3>
+              <h3>"Superheroes"<br>Watercolor on Paper<br>18*24cm<br>(Available)</h3>
             </div>
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3934.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>TBD</h3>
+              <h3>"Falling"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3933.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
-              <h3>TBD</h3>
+              <h3>"Ebene"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3931.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
-              <h3>TBD</h3>
+              <h3>"Sleepy"<br>Watercolor on Paper<br>24*32cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3944.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>TBD</h3>
+              <h3>"Shenaniganz_1"<br>Watercolor and <br> Fineliner on Paper<br>13*15cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3943.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work III">
-              <h3>TBD</h3>
+              <h3>"Shenaniganz_3"<br>Watercolor and <br> Fineliner on Paper<br>13*15cm<br>(Available)</h3>
             </div>
 
             <div class="painting-card">
               <img src="pictures/watercolor/IMG_3942.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work IV">
-              <h3>TBD</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3941.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work V">
-              <h3>TBD</h3>
-            </div>
-
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3940.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work VI">
-              <h3>TBD</h3>
-            </div>
-            <div class="painting-card">
-              <img src="pictures/watercolor/IMG_3939.jpg" onclick="openLightbox(this.src)" alt="Watercolor Work II">
-              <h3>TBD</h3>
+              <h3>"Shenaniganz_2"<br>Watercolor and <br> Fineliner on Paper<br>13*15cm<br>(Available)</h3>
             </div>
           </div>
 
@@ -567,14 +546,13 @@
 
           <div class="about-text">
             <p>
-              Alexander Mattingley-Scott is an artist working with painting,
-              abstraction, color, and atmosphere.
-            </p>
-            <p>
-              My work explores the space between observation and imagination. Drawing inspiration from landscapes, memory, and the human figure, I create paintings that move between abstraction and representation. Through layered surfaces, shifting forms, and a restrained use of narrative, I aim to evoke a sense of depth, ambiguity, and quiet contemplation.
+              Alexander Mattingley-Scott is a German artist whose work explores the relationship between landscape, atmosphere, memory, and spirituality.
+              <p>
+Working across painting and mixed media, the work creates spaces that move between abstraction and representation. Drawing inspiration from nature, dreams, and inner experience, the paintings invite viewers into environments that feel both unfamiliar and strangely comforting.
 
-Rather than depicting specific places or stories, my paintings invite viewers to project their own experiences and interpretations onto the work. I am interested in moments where the familiar becomes uncertain, and where atmosphere and emotion take precedence over description.
-            </p>
+Rather than depicting specific places, the work seeks to evoke a sense of contemplation, mystery, and connection.
+</p>            
+</p>
 
           </div>
         </div>
@@ -589,7 +567,7 @@ Rather than depicting specific places or stories, my paintings invite viewers to
     <section id="contact" class="contact">
       <div class="section-inner">
         <h2>Contact</h2>
-        <p>Feel free to contact me for inquiries, commissions, exhibitions, or questions:</p>
+        <p>Feel free to contact me for price info, inquiries, commissions, exhibitions, or any other questions:</p>
         <p><a href="mailto:alexander.mattingleyscott@gmail.com">alexander.mattingleyscott@gmail.com</a></p>
       </div>
     </section>
